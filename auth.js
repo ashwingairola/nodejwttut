@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 const getToken = (user, callback) => {
-    jwt.sign({ user }, 'goluzsecret', callback);
+    jwt.sign({ user }, 'goluzsecret', {expiresIn: '1d'}, callback);
 };
 
 const protectRoute = (req, res, next) => {
